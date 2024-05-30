@@ -1,28 +1,14 @@
 'use strict';
-class Gallery {
-	constructor(array, selector) {
-		this.items = array;
-		this.parent = document.querySelector(selector);
-	}
-	createElement(src, full, alt) {
-		const imageElement = `<li class="gallery-item"><a class="gallery-link" href="${full}"><img class="gallery-image" src="${src}" alt="${alt}"/></a></li>`;
-		return imageElement;
-	}
-	renderGallery(array) {
-		const gallery = array
-			.map(({ preview, original, description }) =>
-				this.createElement(preview, original, description)
-			)
-			.join(''); //прибрали кому при обєднанні масиву
-		this.parent.innerHTML = gallery;
-	}
-	init() {
-		this.parent.addEventListener('click', e => {
-			e.preventDefault();
-			if (e.target === e.currentTarget) return;
-			this.openModal(e.target);
-		});
-		this.renderGallery(this.items);
-	}
-}
-export default Gallery;
+
+import images from './images.js';
+import Gallery from './Gallery.js';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+const gallery = new Gallery(images, '.gallery');
+gallery.init();
+const options = {
+	captionDelay: 250,
+};
+const simp = new SimpleLightbox('.gallery a', options);
+console.log(simp);

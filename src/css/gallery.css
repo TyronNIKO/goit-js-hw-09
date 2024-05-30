@@ -21,7 +21,12 @@
 .gallery > li img {
     object-fit: contain;
 }
-
+.sl-overlay {
+    background: rgba(46, 47, 66, .8) !important;
+}
+.sl-counter {
+    color:#fff !important;
+}
 @media screen and (min-width: 360px) {
     .gallery {
         flex-direction: row;
@@ -43,7 +48,7 @@
 }
 @media screen and (min-width: 991px) {
     .gallery {
-        max-width: 1128px;
+        max-width: 100%;
     }
     .gallery > li {
         max-height: 200px;
