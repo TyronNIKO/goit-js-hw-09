@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link type="image/svg+xml" href="/goit-js-hw-09/favicon.svg" rel="icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 09</title>
+    
+  <script type="module" crossorigin src="/goit-js-hw-09/assets/styles-e7cbbf82.js"></script>
+  <link rel="stylesheet" href="/goit-js-hw-09/assets/styles-9ec9bbc8.css">
+</head>
+
+<body>
+    <header>
+    <div class="container">
+        <nav class="nav">
+            <a class="btn btn-red" href="./index.html">Main</a>
+            <a class="btn btn-blue" href="./1-gallery.html">1 Gallery</a>
+            <a class="btn btn-blue" href="./2-form.html">2 Form</a>
+        </nav>
+    </div>
+</header>
+<script>
+
+    const list = document.querySelectorAll('.nav a')
+    const href = window.location.pathname;
+
+    list.forEach((link)=>{
+        if (href == link.pathname) link.style.display = 'none'
+    })
+
+</script>
+    
+</body>
+
+</html>
