@@ -17,7 +17,6 @@ export default class Form {
 	collectInputsValue(form) {
 		const formData = new FormData(form);
 		const data = {};
-		formData.forEach(item => console.log(item));
 		for (const [key, value] of formData) {
 			data[key] = value.trim();
 		}
